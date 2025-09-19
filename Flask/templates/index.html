@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Image Analysis Pro</title>
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/128/8131/8131880.png" />
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<div class="page">
+<header class="header">
+<h1>Image Analysis Pro</h1>
+<p class="subtitle">TensorFlow + DeepFace · No Streamlit</p>
+</header>
+
+
+<section class="card upload-card">
+<div class="upload-left">
+<label class="file-label">
+<input type="file" id="fileInput" accept="image/*" />
+<span>Upload an image</span>
+</label>
+<div class="toggles">
+<label>
+<input type="checkbox" id="toggleRace" /> Include race (optional)
+</label>
+<label>
+Detector:
+<select id="detector">
+<option value="retinaface" selected>retinaface (accurate)</option>
+<option value="mtcnn">mtcnn</option>
+<option value="mediapipe">mediapipe</option>
+<option value="opencv">opencv</option>
+</select>
+</label>
+</div>
+<button id="analyzeBtn" disabled>Analyze</button>
+<div id="status" class="status"></div>
+</div>
+<div class="upload-right">
+<div class="img-frame">
+<img id="preview" alt="Preview" />
+<canvas id="overlay"></canvas>
+</div>
+</div>
+</section>
+
+
+<section id="props" class="card props-card hidden"></section>
+<section id="results" class="card hidden"></section>
+
+
+<footer class="footer">
+<small>© <span id="year"></span> Image Analysis Pro · Flask + TensorFlow + DeepFace</small>
+</footer>
+</div>
+
+
+<script src="/static/app.js"></script>
+</body>
+</html>
